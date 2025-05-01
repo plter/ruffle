@@ -18,6 +18,7 @@ mod preferences;
 #[cfg(feature = "tracy")]
 mod tracy;
 mod util;
+mod embed;
 
 use crate::preferences::GlobalPreferences;
 use anyhow::{Context, Error};
