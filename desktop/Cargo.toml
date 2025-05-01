@@ -11,6 +11,7 @@ version.workspace = true
 workspace = true
 
 [dependencies]
+actix-web = "4"
 clap = { workspace = true }
 cpal = { workspace = true }
 egui = { workspace = true }
