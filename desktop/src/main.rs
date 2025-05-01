@@ -152,7 +152,11 @@ fn shutdown() {
 async fn main() -> Result<(), Error> {
     init();
 
-    let opt = Opt::parse();
+    let port = embed::internal_server::start_internal_server();
+
+    let mut opt = Opt::parse();
+    opt.movie_url = Some(Url::parse(&format!("http://127.0.0.1:{port}/movie.swf"))?);
+    opt.no_gui = true;
     let preferences = GlobalPreferences::load(opt.clone())?;
 
     let logs_path = &preferences.cli.cache_directory.join("log");
